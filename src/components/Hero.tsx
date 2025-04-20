@@ -1,66 +1,52 @@
+
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, PenTool, Stars } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="pt-28 pb-16 md:pt-36 md:pb-24">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center text-center">
-          <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm mb-6">
-            <Stars className="h-3.5 w-3.5 mr-2 text-primary" />
-            <span>Создаем цифровые истории, которые запоминаются</span>
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-4 max-w-3xl glow">
-            Дизайн и разработка для амбициозных проектов
+    <section className="pt-28 md:pt-32 pb-16 md:pb-24 relative overflow-hidden">
+      {/* Декоративные элементы */}
+      <div className="absolute top-20 right-0 w-1/3 h-1/3 bg-primary/10 rounded-full filter blur-3xl animate-float"></div>
+      <div className="absolute bottom-0 left-10 w-1/4 h-1/4 bg-accent/10 rounded-full filter blur-3xl animate-float animation-delay-2000"></div>
+      
+      <div className="container px-4 md:px-6 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6 bg-clip-text text-transparent purple-gradient glow">
+            Преображаем идеи в цифровую реальность
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-            Студия Krays специализируется на создании уникальных цифровых продуктов,
-            которые сочетают в себе элегантный дизайн и высокотехнологичную разработку.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Мы создаем впечатляющие цифровые продукты, которые выделяют ваш бренд и вовлекают вашу аудиторию
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-3 mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="purple-gradient">
-              Обсудить проект <ArrowRight className="ml-2 h-4 w-4" />
+              Начать проект <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline">
-              Посмотреть портфолио
+            <Button size="lg" variant="outline" className="border-primary hover:bg-primary/10">
+              Изучить портфолио
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl w-full">
-            <div className="flex flex-col items-center p-6 bg-card rounded-lg border">
-              <div className="p-3 bg-secondary rounded-full mb-4">
-                <PenTool className="h-5 w-5 text-primary" />
-              </div>
-              <h3 className="text-lg font-medium mb-2">Дизайн</h3>
-              <p className="text-sm text-muted-foreground text-center">
-                Создаем уникальные интерфейсы, брендинг и визуальные решения
-              </p>
-            </div>
-            
-            <div className="flex flex-col items-center p-6 bg-card rounded-lg border">
-              <div className="p-3 bg-secondary rounded-full mb-4">
-                <Code className="h-5 w-5 text-primary" />
-              </div>
-              <h3 className="text-lg font-medium mb-2">Разработка</h3>
-              <p className="text-sm text-muted-foreground text-center">
-                Превращаем концепции в полноценные веб-сайты и приложения
-              </p>
-            </div>
-            
-            <div className="flex flex-col items-center p-6 bg-card rounded-lg border">
-              <div className="p-3 bg-secondary rounded-full mb-4">
-                <Stars className="h-5 w-5 text-primary" />
-              </div>
-              <h3 className="text-lg font-medium mb-2">Стратегия</h3>
-              <p className="text-sm text-muted-foreground text-center">
-                Разрабатываем цифровые стратегии для достижения бизнес-целей
-              </p>
+          {/* Клиенты */}
+          <div className="mt-16 md:mt-24">
+            <p className="text-sm font-medium text-muted-foreground mb-6">
+              Нам доверяют компании по всему миру
+            </p>
+            <div className="flex flex-wrap justify-center gap-8 opacity-70">
+              {[1, 2, 3, 4, 5].map((item) => (
+                <div key={item} className="h-8 w-24 bg-muted rounded flex items-center justify-center">
+                  <span className="text-xs text-muted-foreground">ЛОГОТИП {item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
+      </div>
+      
+      {/* Декоративная иллюстрация */}
+      <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-full max-w-5xl px-4">
+        <div className="aspect-[16/9] w-full bg-gradient-to-b from-background to-transparent opacity-20"></div>
       </div>
     </section>
   );
